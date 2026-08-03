@@ -57,7 +57,7 @@ export default function App() {
       <Nav />
       <main>
         <Hero />
-        <Interlude />
+        {/* <Interlude /> */}
         {WORKS.map((work, i) => (
           <WorkSection key={work.id} work={work} order={i} />
         ))}

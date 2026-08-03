@@ -11,7 +11,7 @@ export function WorkSection({ work, order }: { work: Work; order: number }) {
       ref={ref}
       id={work.id}
       data-shown={shown}
-      className="reveal relative scroll-mt-20 border-t border-[var(--color-line)] py-24 sm:py-32 lg:py-40"
+      className="reveal relative scroll-mt-10 border-t border-[var(--color-line)] py-24 sm:py-32 lg:py-40"
     >
       <div className="mx-auto w-full max-w-[104rem] px-6 sm:px-10 lg:px-16">
         {/* section header */}

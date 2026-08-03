@@ -41,14 +41,14 @@ export const PROFILE = {
     'I build the computational machinery that turns molecular questions into shipped answers — discovery platforms, simulation at scale, and the infrastructure underneath both.',
   sub: 'Chemical & Biomolecular Engineering PhD, Northwestern. Currently running end-to-end small-molecule and protein discovery: 17M-compound search spaces, physics-based simulation, and the cloud systems that hold it all together.',
   links: [
-    { label: 'LinkedIn', href: 'https://www.linkedin.com/in/yang-li-nu/', hint: 'in/yang-li-nu' },
+    { label: 'LinkedIn', href: 'https://www.linkedin.com/in/yang-li-69377615a/', hint: 'in/yang-li-nu' },
     {
       label: 'Google Scholar',
-      href: 'https://scholar.google.com/citations?user=yangli',
+      href: 'https://scholar.google.com/citations?user=mvo6jCQAAAAJ&hl=en',
       hint: 'citations',
     },
     { label: 'GitHub', href: 'https://github.com/l454025801', hint: 'l454025801' },
-    { label: 'Email', href: 'mailto:yangli2021@u.northwestern.edu', hint: 'get in touch' },
+    { label: 'Email', href: 'yangli@yang-ai4s.com', hint: 'get in touch' },
   ],
   marquee: [
     'machine learning',
@@ -62,8 +62,8 @@ export const PROFILE = {
 
 export const STATS = [
   { value: '13', label: 'publications', note: 'Nat. Nanotechnol. · Nat. Commun. · JCIM' },
-  { value: '17M+', label: 'compound library', note: 'curated, priced, queryable' },
-  { value: '8', label: 'months to launch', note: 'discovery → commercial product' },
+  { value: '20+', label: 'discovered molecules', note: 'bioactive & safe compounds' },
+  { value: '8', label: 'months to launch', note: 'from discovery to commercial product' },
   { value: '~70K', label: 'papers / day', note: 'read by an autonomous agent' },
 ]
 
@@ -76,10 +76,9 @@ export const WORKS: Work[] = [
     lede: 'Models that decide what to make next — and agents that read the literature faster than any group of humans can.',
     bullets: [
       'Led ML-driven identification of next-generation bioactive molecules for hair growth, combining learned scoring with docking and molecular dynamics. 10+ hits at a ~3% hit rate.',
-      'Built and deployed an autonomous agent that analyzes ~70,000 academic papers daily, surfacing candidate biological pathways and novel research drugs.',
       'Created a chemical-space dimension-reduction and sampling method that compresses a 17M-molecule library to a ~200K subset while preserving coverage — ~80% lower screening cost.',
       'Translated in-silico hits into experimental validation plans with downstream wet-lab teams, closing the loop between prediction and assay.',
-      'Predicted peptide-inhibitor binding affinity with ML ahead of docking and MD confirmation, using the model as a triage layer rather than a final answer.',
+      'Built and deployed an autonomous agent that analyzes ~70,000 academic papers daily, surfacing candidate biological pathways and novel research drugs.',
     ],
     slides: [
       {
