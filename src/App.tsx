@@ -4,26 +4,26 @@ import { Personal } from './components/Personal'
 import { WorkSection } from './components/WorkSection'
 import { PROFILE, WORKS } from './content'
 
-function Interlude() {
-  return (
-    <div className="relative overflow-hidden border-t border-[var(--color-line)] py-6">
-      <div className="flex w-max animate-[marquee_38s_linear_infinite] gap-10 whitespace-nowrap">
-        {[0, 1].map((dup) => (
-          <div key={dup} className="flex gap-10" aria-hidden={dup === 1}>
-            {PROFILE.marquee.map((m) => (
-              <span key={m} className="flex items-center gap-10">
-                <span className="font-display text-xl text-[var(--color-dust)] italic sm:text-2xl">
-                  {m}
-                </span>
-                <span className="h-1 w-1 rounded-full bg-[var(--color-moss)] opacity-60" />
-              </span>
-            ))}
-          </div>
-        ))}
-      </div>
-    </div>
-  )
-}
+// function Interlude() {
+//   return (
+//     <div className="relative overflow-hidden border-t border-[var(--color-line)] py-6">
+//       <div className="flex w-max animate-[marquee_38s_linear_infinite] gap-10 whitespace-nowrap">
+//         {[0, 1].map((dup) => (
+//           <div key={dup} className="flex gap-10" aria-hidden={dup === 1}>
+//             {PROFILE.marquee.map((m) => (
+//               <span key={m} className="flex items-center gap-10">
+//                 <span className="font-display text-xl text-[var(--color-dust)] italic sm:text-2xl">
+//                   {m}
+//                 </span>
+//                 <span className="h-1 w-1 rounded-full bg-[var(--color-moss)] opacity-60" />
+//               </span>
+//             ))}
+//           </div>
+//         ))}
+//       </div>
+//     </div>
+//   )
+// }
 
 function Footer() {
   return (
