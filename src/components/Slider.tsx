@@ -1,9 +1,44 @@
-import { useRef } from 'react'
+import { useEffect, useRef } from 'react'
 import type { Slide } from '../content'
 import { Figure } from './Figure'
-import { useAutoplay, useInView } from '../hooks'
+import { useAutoplay, useInView, usePrefersReducedMotion } from '../hooks'
 
 const INTERVAL = 5200
+
+/** Plays once from the start each time its slide becomes visible, then holds the last frame. */
+function SlideVideo({ src, playing }: { src: string; playing: boolean }) {
+  const ref = useRef<HTMLVideoElement | null>(null)
+  const reduced = usePrefersReducedMotion()
+
+  useEffect(() => {
+    const v = ref.current
+    if (!v) return
+    if (reduced) {
+      // Static end state instead of motion.
+      const settle = () => (v.currentTime = Math.max(0, v.duration - 0.05))
+      if (v.readyState >= 1) settle()
+      else v.addEventListener('loadedmetadata', settle, { once: true })
+      return
+    }
+    if (playing) {
+      v.currentTime = 0
+      v.play().catch(() => {})
+    } else {
+      v.pause()
+    }
+  }, [playing, reduced])
+
+  return (
+    <video
+      ref={ref}
+      className="h-full w-full object-cover opacity-90"
+      src={src}
+      muted
+      playsInline
+      preload="auto"
+    />
+  )
+}
 
 export function Slider({ slides, seedBase }: { slides: Slide[]; seedBase: number }) {
   const { ref, inView } = useInView<HTMLDivElement>()
@@ -67,14 +102,7 @@ export function Slider({ slides, seedBase }: { slides: Slide[]; seedBase: number
             >
               {slide.src ? (
                 slide.kind === 'video' ? (
-                  <video
-                    className="h-full w-full object-cover opacity-90"
-                    src={slide.src}
-                    autoPlay
-                    muted
-                    loop
-                    playsInline
-                  />
+                  <SlideVideo src={slide.src} playing={isActive && inView} />
                 ) : (
                   <img
                     className="h-full w-full object-cover opacity-90"

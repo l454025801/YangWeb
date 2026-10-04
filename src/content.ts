@@ -83,6 +83,8 @@ export const WORKS: Work[] = [
     slides: [
       {
         figure: 'pointcloud',
+        src: '/media/chem-space.mp4',
+        kind: 'video',
         caption: 'Chemical space, 17M → 200K. Sampling preserves coverage of the parent library.',
         stat: { value: '80', unit: '%', note: 'screening cost removed' },
       },

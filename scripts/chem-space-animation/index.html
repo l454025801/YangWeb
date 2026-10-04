@@ -1,0 +1,43 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Chemical-space reduction · animation</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Instrument+Serif:ital@0;1&family=Sora:wght@200..700&family=JetBrains+Mono:wght@300;400;500&display=swap"
+      rel="stylesheet"
+    />
+    <style>
+      html,
+      body {
+        margin: 0;
+        height: 100%;
+        background: #08090a;
+      }
+      body {
+        display: grid;
+        place-items: center;
+      }
+      canvas {
+        display: block;
+        max-height: 100vh;
+        max-width: 100vw;
+        aspect-ratio: 3 / 4;
+      }
+      .render canvas {
+        max-height: none;
+        max-width: none;
+      }
+    </style>
+  </head>
+  <body>
+    <canvas id="c" width="900" height="1200" aria-label="Chemical-space reduction animation"></canvas>
+    <script>
+      if (new URLSearchParams(location.search).has('render')) document.body.classList.add('render')
+    </script>
+    <script src="./animation.js"></script>
+  </body>
+</html>
